@@ -1,0 +1,32 @@
+@import '~bootstrap/scss/bootstrap';
+@import '/node_modules/@fontsource/el-messiri/400.css';
+@import '/node_modules/@fontsource/el-messiri/500.css';
+@import '/node_modules/@fontsource/el-messiri/600.css';
+@import '/node_modules/@fontsource/el-messiri/700.css';
+@import '_variables';
+
+body{
+    font-family: "El Messiri", sans-serif;
+}
+
+header,footer{
+    height: 80px;
+    background-color: $dc-main-color;
+    color: $secondary-color;
+
+    h1{
+        font-size: 32px;
+        font-weight: 700;
+    }
+}
+
+main{
+    height: calc(100vh - 160px);
+}
+
+footer {
+    h6{
+        font-size: .8em;
+        font-weight: 700;
+    }
+}
