@@ -17,16 +17,47 @@ header,footer{
     h1{
         font-size: 32px;
         font-weight: 700;
+
+        a{
+            text-decoration: none;
+            color: inherit;
+            transition: all .3s;
+
+            &:hover{
+                text-decoration: underline;
+                color: inherit;
+            }
+        }
     }
 }
 
 main{
     height: calc(100vh - 160px);
+
+    table{
+
+        thead{
+            th{
+                color: $dc-main-color;
+            }
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+    }
 }
 
 footer {
     h6{
         font-size: .8em;
         font-weight: 700;
+    }
+}
+
+.card{
+    height: 45vh;
+   .np-img{
+        width: 20rem;
     }
 }
