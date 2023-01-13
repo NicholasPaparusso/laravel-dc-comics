@@ -1,9 +1,17 @@
 @extends('layouts.main')
 
 @section('content')
-<h1 class="py-3 text-center">Comics Table </h1>
+
+<div class="d-flex justify-content-center">
+    <h1 class=" ">Comics Table @include('partials.add') </h1>
+</div>
 
 <div class="container">
+    @if (session('deleted'))
+        <div class="alert alert-success" role="alert">
+            {{session('deleted')}}
+        </div>
+    @endif
     <table class="table ">
         <thead>
           <tr>
@@ -18,21 +26,47 @@
         </thead>
         <tbody>
 
-            @foreach ($comics as $comic )
+            @forelse ($comics as $comic )
             <tr>
                 <td>{{$comic['id']}}</td>
                 <td><a href="{{route('comics.show', $comic->id)}}">{{$comic['title']}}</a></td>
                 <td>{{$comic['type']}}</td>
                 <td>${{$comic['price']}}</td>
-                <td><a class="btn btn-info text-white" href="{{route('comics.show', $comic->id)}}"><i class="fa-solid fa-magnifying-glass"></i></a></td>
-                <td><a class="btn btn-warning text-white" href="#"><i class="fa-solid fa-pencil"></i></a></td>
-                <td><a class="btn btn-danger" href="#"><i class="fa-solid fa-trash"></i></a></td>
-            </tr>
-            @endforeach
 
+                <td>
+                    <a class="btn btn-info text-white" href="{{route('comics.show', $comic->id)}}"><i class="fa-solid fa-magnifying-glass"></i></a>
+                </td>
+
+                <td>
+                    @include('partials.edit')
+                </td>
+                <td>
+                    @include('partials.delete' ,['id'=> $comic->id])
+                </td>
+            </tr>
+
+            @empty
+            <h5>
+                Nessun prodotto trovato del DB
+            </h5>
+            @endforelse
+            <tr>
+                <td>#</td>
+                <td>
+                    <a class="mx-3" href="{{route('comics.create')}}">Add New Comic</a>
+                    @include('partials.add-plus')
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+
+                </td>
+            </tr>
         </tbody>
       </table>
       {{ $comics->links() }}
 </div>
-@include('partials.add')
+
 @endsection

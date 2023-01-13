@@ -15,7 +15,7 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $comics = Comic::orderBy('id','desc')->paginate(4);
+        $comics = Comic::orderBy('id','desc')->paginate(7);
         return view('comics.index', compact('comics'));
     }
 
@@ -97,6 +97,7 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return redirect(route('comics.index'))->with('deleted', "$comic->title è stato eliminato con successo");
     }
 }

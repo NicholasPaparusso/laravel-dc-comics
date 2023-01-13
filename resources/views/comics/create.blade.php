@@ -11,10 +11,10 @@
         <input class="mb-3" type="text" name="title" id="title">
 
         <label for="description">Add Description</label>
-        <input class="mb-3" type="text" name="description" id="description">
+        <textarea class="mb-3"  name="description" id="description"></textarea>
 
         <label for="thumb">Add Thumb</label>
-        <input class="mb-3" type="text" name="thumb" id="thumb">
+        <textarea class="mb-3" type="text" name="thumb" id="thumb"></textarea>
 
 
         <label for="price">Add Price</label>
