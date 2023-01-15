@@ -17,13 +17,12 @@
 
         <label for="title">Add Title *</label>
         <input
-        value="{{$comic->title}}"
         class="mb-3 form-control
         @error('title')
         is-invalid
         @enderror
         " type="text" name="title" id="title"
-        value="{{old('title')}}">
+        value="{{old('title', $comic->title)}}">
 
         @error('title')
         <div class=" mb-3 invalid-feedback">
@@ -35,17 +34,16 @@
 
         <label for="description">Add Description</label>
         <textarea
-        class="mb-3 form-control" name="description" id="description">{{old('description')}}{{$comic->description}} </textarea>
+        class="mb-3 form-control" name="description" id="description">{{old('description',$comic->description)}}</textarea>
 
 
 
         <label for="thumb">Add Thumb</label>
-        <input class="mb-3 form-control" type="text" name="thumb" id="thumb" value="{{old('thum')}}">
+        <input class="mb-3 form-control" type="text" name="thumb" id="thumb" value="{{old('thumb', $comic->thumb)}}">
 
 
         <label for="price">Add Price *</label>
         <input
-        value="{{$comic->price}}"
         class="mb-3 form-control
         @error('price')
             is-invalid
@@ -53,7 +51,7 @@
          type="number"
         step=0.01
         name="price" id="price"
-        value="{{old('price')}}"
+        value="{{old('price',$comic->price)}}"
         >
 
         @error('price')
@@ -64,12 +62,11 @@
 
         <label for="series">Add Series *</label>
         <input
-        value="{{$comic->series}}"
         class="mb-3 form-control
         @error('series')
             is-invalid
         @enderror"
-         type="text" name="series" id="series" value="{{old('series')}}">
+         type="text" name="series" id="series" value="{{old('series', $comic->series)}}">
 
          @error('series')
          <div class=" mb-3 invalid-feedback">
@@ -79,12 +76,11 @@
 
         <label for="sale_date">Add Sale Date *</label>
         <input
-        value="{{$comic->sale_date}}"
         class="mb-3 form-control
         @error('sale_date')
          is-invalid
         @enderror"
-         type="date" name="sale_date" id="sale_date" value="{{old('sale_date')}}">
+         type="date" name="sale_date" id="sale_date" value="{{old('sale_date', $comic->sale_date)}}">
 
          @error('sale_date')
          <div class=" mb-3 invalid-feedback">
@@ -94,12 +90,11 @@
 
         <label for="type">Add Type *</label>
         <input
-        value="{{$comic->type}}"
         class="mb-3 form-control
         @error('type')
             is-invalid
         @enderror"
-         type="text" name="type" id="type" value="{{old('type')}}">
+         type="text" name="type" id="type" value="{{old('type'), $comic->type}}">
 
          @error('type')
          <div class=" mb-3 invalid-feedback">
