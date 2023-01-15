@@ -18,7 +18,9 @@
 
 
         <label for="price">Add Price</label>
-        <input class="mb-3" type="number" name="price" id="price">
+        <input class="mb-3" type="number"
+        step=0.01
+        name="price" id="price">
 
         <label for="series">Add Series</label>
         <input class="mb-3" type="text" name="series" id="series">

@@ -38,7 +38,7 @@
                 </td>
 
                 <td>
-                    @include('partials.edit')
+                    @include('partials.edit', $comic)
                 </td>
                 <td>
                     @include('partials.delete' ,['id'=> $comic->id])
