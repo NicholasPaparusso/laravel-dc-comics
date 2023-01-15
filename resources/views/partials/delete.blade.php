@@ -1,6 +1,6 @@
 <form
     class="d-inline"
-    onsubmit="return confirm('Confermi di voler eliminare {{$comic->title}} ')"
+    onsubmit="return confirm('Confermi di voler eliminare: {{$comic->title}} ')"
     action="{{ route('comics.destroy', $id) }}" method="POST">
     @csrf
     @method('DELETE')
